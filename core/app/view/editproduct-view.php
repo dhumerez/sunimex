@@ -29,7 +29,20 @@ if($product!=null):
     </div>
   </div>
 
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Codigo Interno*</label>
+    <div class="col-md-6">
+      <input type="text" name="code" class="form-control" id="code" value="<?php echo $product->code; ?>" placeholder="Codigo Interno del Producto">
+    </div>
+  </div>
 
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Codigo de barras*</label>
+    <div class="col-md-6">
+      <input type="text" name="barcode" class="form-control" id="barcode" value="<?php echo $product->barcode; ?>" placeholder="Codigo de barras del Producto">
+    </div>
+  </div>
     <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Nombre*</label>
     <div class="col-md-6">
@@ -37,9 +50,9 @@ if($product!=null):
     </div>
   </div>
     <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Amperaje (AH)</label>
+    <label for="inputEmail1" class="col-lg-3 control-label">Categoria</label>
     <div class="col-md-6">
-    <select name="category_id" class="form-control" required>
+    <select name="category_id" class="form-control">
     <option value="">-- NINGUNA --</option>
     <?php foreach($categories as $category):?>
       <option value="<?php echo $category->id;?>" <?php if($product->category_id!=null&& $product->category_id==$category->id){ echo "selected";}?>><?php echo $category->name;?></option>
@@ -50,7 +63,7 @@ if($product!=null):
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Marca</label>
     <div class="col-md-6">
-    <select name="brand_id" class="form-control" required>
+    <select name="brand_id" class="form-control">
     <option value="">-- NINGUNA --</option>
     <?php foreach(BrandData::getAll() as $category):?>
       <option value="<?php echo $category->id;?>" <?php if($product->brand_id!=null&& $product->brand_id==$category->id){ echo "selected";}?>><?php echo $category->name;?></option>
@@ -89,50 +102,6 @@ if($product!=null):
       <input type="text" name="presentation" class="form-control" id="inputEmail1" value="<?php echo $product->presentation; ?>" placeholder="Presentacion del Producto">
     </div>
   </div>
-
-            <div class="form-group">
-                <label for="inputEmail1" class="col-lg-3 control-label">CCA*</label>
-                <div class="col-md-6">
-                    <input type="text" name="code" class="form-control" id="code" value="<?php echo $product->code; ?>" placeholder="CCA">
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <label for="inputEmail1" class="col-lg-3 control-label">Litros de electrolito*</label>
-                <div class="col-md-6">
-                    <input type="text" name="barcode" class="form-control" id="barcode" value="<?php echo $product->barcode; ?>" placeholder="Litros de electrolito">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputEmail1" class="col-lg-3 control-label" >Layout</label>
-                <div class="col-md-6">
-                    <select name="layout" class="form-control">
-                        <option value="" <?php echo $s?>>-- NINGUNA --</option>
-                        <?php $s=($product->layout == 0 ) ? 'SELECTED': '';?>
-                        <option value="0"  >0 (invertido)</option>
-                        <?php $s=($product->layout == 1 ) ? 'SELECTED': '';?>
-                        <option value="1" <?php echo $s?>>1 (normal)</option>
-                        <?php $s=($product->layout == 2 ) ? 'SELECTED': '';?>
-                        <option value="2" <?php echo $s?>>2 (+ -)</option>
-                        <?php $s=($product->layout == 3 ) ? 'SELECTED': '';?>
-                        <option value="3" <?php echo $s?>>3 (- +)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputEmail1" class="col-lg-3 control-label" >Terminal</label>
-                <div class="col-md-6">
-                    <select name="terminal" class="form-control">
-                        <option value="">-- NINGUNA --</option>
-                        <option value="standard"> Standard</option>
-                        <option value="small"> Small</option>
-                        <option value="stud"> Stud</option>
-                    </select>    </div>
-            </div>
-
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label"></label>
     <div class="col-md-2">
@@ -142,10 +111,6 @@ if($product!=null):
     <div class="col-md-2">
     <label class="control-label">Altura*</label>
       <input type="text" name="height" value="<?php echo $product->height; ?>" class="form-control"  placeholder="Altura">
-    </div>
-    <div class="col-md-2">
-        <label class="control-label">Largo*</label>
-        <input type="text" name="weight" value="<?php echo $product->length1; ?>" class="form-control" placeholder="L argo">
     </div>
     <div class="col-md-2">
     <label class="control-label">Peso*</label>

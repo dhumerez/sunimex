@@ -29,7 +29,19 @@ $categories = CategoryData::getAll();
       <input type="file" name="image" id="image" placeholder="">
     </div>
   </div>
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Codigo Interno*</label>
+    <div class="col-md-6">
+      <input type="text" name="code" id="product_code" class="form-control" id="barcode" placeholder="Codigo Interno">
+    </div>
+  </div>
 
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Codigo de Barras*</label>
+    <div class="col-md-6">
+      <input type="text" name="barcode" id="product_code" class="form-control" id="barcode" placeholder="Codigo de Barras del Producto">
+    </div>
+  </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Nombre*</label>
     <div class="col-md-6">
@@ -37,9 +49,9 @@ $categories = CategoryData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Amperaje (AH)</label>
+    <label for="inputEmail1" class="col-lg-3 control-label">Categoria</label>
     <div class="col-md-6">
-    <select name="category_id" class="form-control" required>
+    <select name="category_id" class="form-control">
     <option value="">-- NINGUNA --</option>
     <?php foreach($categories as $category):?>
       <option value="<?php echo $category->id;?>"><?php echo $category->name;?></option>
@@ -47,9 +59,9 @@ $categories = CategoryData::getAll();
       </select>    </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label" >Marca</label>
+    <label for="inputEmail1" class="col-lg-3 control-label">Marca</label>
     <div class="col-md-6">
-    <select name="brand_id" class="form-control" required>
+    <select name="brand_id" class="form-control">
     <option value="">-- NINGUNA --</option>
     <?php foreach(BrandData::getAll() as $category):?>
       <option value="<?php echo $category->id;?>"><?php echo $category->name;?></option>
@@ -97,41 +109,6 @@ $categories = CategoryData::getAll();
   </div>
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">CCA*</label>
-    <div class="col-md-6">
-      <input type="text" name="code" id="product_code" class="form-control" id="barcode" placeholder="CCA">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Litros de electrolito*</label>
-    <div class="col-md-6">
-      <input type="text" name="barcode" id="product_code" class="form-control" id="barcode" placeholder="Litros de electrolito">
-    </div>
-  </div>
-            <div class="form-group">
-                <label for="inputEmail1" class="col-lg-3 control-label" >Layout</label>
-                <div class="col-md-6">
-                    <select name="layout" class="form-control">
-                        <option value="">-- NINGUNA --</option>
-                        <option value="0">0 (invertido)</option>
-                        <option value="1">1 (normal)</option>
-                        <option value="2">2 (+ -)</option>
-                        <option value="3">3 (- +)</option>
-                    </select>    </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputEmail1" class="col-lg-3 control-label" >Terminal</label>
-                <div class="col-md-6">
-                    <select name="terminal" class="form-control">
-                        <option value="">-- NINGUNA --</option>
-                        <option value="standard"> Standard</option>
-                        <option value="small"> Small</option>
-                        <option value="stud"> Stud</option>
-                    </select>    </div>
-            </div>
-
-  <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label"></label>
     <div class="col-md-2">
     <label class="control-label">Anchura*</label>
@@ -141,12 +118,6 @@ $categories = CategoryData::getAll();
     <label class="control-label">Altura*</label>
       <input type="text" name="height"  class="form-control" placeholder="Altura">
     </div>
-
-    <div class="col-md-2">
-      <label class="control-label">Largo*</label>
-      <input type="text" name="length1"  class="form-control" placeholder="Largo">
-    </div>
-
     <div class="col-md-2">
     <label class="control-label">Peso*</label>
       <input type="text" name="weight"  class="form-control" placeholder="Peso">

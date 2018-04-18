@@ -12,14 +12,9 @@ if(count($_POST)>0){
   $product->description = $_POST["description"];
   $product->presentation = $_POST["presentation"];
 
-  $product->layout = $_POST["layout"];
-  $product->terminal = $_POST["terminal"];
-
   $product->width = $_POST["width"];
   $product->height = $_POST["height"];
-  $product->length1 = $_POST["length1"];
   $product->weight = $_POST["weight"];
-
 
   $product->expire_at = $_POST["expire_at"];
   //$product->inventary_min = $_POST["inventary_min"];

@@ -3,8 +3,8 @@
 * @author evilnapsis
 * @url http://evilnapsis.com/product/inventio-max
 */
-create database inventiomax;
-use inventiomax;
+create database inventiomax1;
+use inventiomax1;
 
 
 
